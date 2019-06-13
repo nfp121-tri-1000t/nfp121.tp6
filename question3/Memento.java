@@ -9,12 +9,15 @@ public class Memento {
      //        d’un second pour la restitution du composite, 
      //        représentent une solution possible. 
      
-     public Memento(Cotisant c) {
-       // sauvegarde
-     }
+     private HashMap<Cotisant,Integer> state; 
 
-     public void setState(Cotisant c) {
-       // restitution
-     }
+    public Memento(Cotisant c) {                             
+        this.state = c.accepter(new VisiteurSauvegarde()); 
+    } 
+
+    public void setState(Cotisant c) { 
+        // restitution         
+        c.accepter(new VisiteurRestitution(this.state)); 
+    } 
     
     }
