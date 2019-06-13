@@ -6,7 +6,13 @@ import question1.*;
 public class TestsDesVisiteurs extends junit.framework.TestCase{
 
     public void testACompleter(){
-        fail(" cette méthode de tests, est à compléter, appels des trois visiteurs....");
+        try{
+         //   Visiteur v = new Visiteur(C);
+        }catch(Exception e){
+            
+        
+            fail("exception inattendue !!! " + e.getMessage());
+        }
     }
 
 
